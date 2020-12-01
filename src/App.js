@@ -62,10 +62,10 @@ const App = () => {
   }
 
   useEffect(() => {
-    socket.on('addNewBook', (book) => {
-      dispatch({ type: 'addNewBookAtFirstPosition', value: book })
+    socket.on('addNewBook', (newBook) => {
+      dispatch({ type: 'addNewBookAtFirstPosition', value: newBook })
     })
-  }, [state.currentNav])
+  }, [])
 
   useEffect(() => {
     const handleScroll = () => {

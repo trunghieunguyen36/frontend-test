@@ -25,11 +25,8 @@ const CommentModal = ({ visible, setVisible, bookId, refetchData }) => {
         setVisible(false)
         form.resetFields()
       })
-      .catch(() => {
-        notification['error']({
-          message: 'Error',
-          description: 'Something wrong',
-        })
+      .catch((error) => {
+        console.log(error)
       })
   }
 

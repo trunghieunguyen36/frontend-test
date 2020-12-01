@@ -8,7 +8,7 @@ const Grid = ({ refetchData }) => {
   return (
     <Row gutter={[16, 24]} style={{ marginTop: '20px' }}>
       {books.map((book) => (
-        <Col key={book._id} className='gutter-row' span={6}>
+        <Col key={book._id} className='gutter-row' lg={6} md={8} sm={12} xs={12}>
           <BookItem refetchData={refetchData} book={book} />
         </Col>
       ))}
