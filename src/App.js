@@ -63,9 +63,7 @@ const App = () => {
 
   useEffect(() => {
     socket.on('addNewBook', (book) => {
-      if (book.type === state.currentNav || state.currentNav === 'all') {
-        dispatch({ type: 'addNewBookAtFirstPosition', value: book })
-      }
+      dispatch({ type: 'addNewBookAtFirstPosition', value: book })
     })
   }, [state.currentNav])
 
