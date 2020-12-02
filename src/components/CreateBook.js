@@ -22,10 +22,6 @@ const CreateBook = () => {
       const response = await Axios.post('books', values)
       if (response.data.status === 'success') {
         socket.emit('addNewBook', response.data.data)
-        notification['success']({
-          message: 'Success',
-          description: 'Add book success',
-        })
       } else {
         notification['error']({
           message: 'Error',

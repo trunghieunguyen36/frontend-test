@@ -1,6 +1,6 @@
 import React, { useEffect, useReducer, useRef, lazy, Suspense } from 'react'
 import { BrowserRouter, Switch, Route } from 'react-router-dom'
-import { Spin } from 'antd'
+import { Spin, notification } from 'antd'
 import Axios from 'axios'
 import Header from './components/Header'
 import StateContext from './context/StateContext'
@@ -63,6 +63,10 @@ const App = () => {
 
   useEffect(() => {
     socket.on('addNewBook', (newBook) => {
+      notification['success']({
+        message: 'Success',
+        description: 'A book was added',
+      })
       dispatch({ type: 'addNewBookAtFirstPosition', value: newBook })
     })
   }, [])
