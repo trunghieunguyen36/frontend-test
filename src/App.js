@@ -65,10 +65,11 @@ const App = () => {
     socket.on('addNewBook', (newBook) => {
       notification['success']({
         message: 'Success',
-        description: 'A book was added',
+        description: `${newBook.name} was added!`,
       })
       dispatch({ type: 'addNewBookAtFirstPosition', value: newBook })
     })
+    return () => socket.disconnect()
   }, [])
 
   useEffect(() => {
